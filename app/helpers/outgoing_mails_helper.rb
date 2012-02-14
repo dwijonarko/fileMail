@@ -1,0 +1,2 @@
+module OutgoingMailsHelper
+end

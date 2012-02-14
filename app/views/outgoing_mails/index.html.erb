@@ -1,0 +1,33 @@
+<h1>Daftar Surat Keluar</h1>
+<table class="table_list" border="0" cellspacing="0">
+  <tr>
+    <th >Nomor</th>
+    <th>Nomor Surat</th>
+    <th>Pengirim</th>
+    <th>Tujuan</th>
+    <th>Perihal</th>
+    <th>Tanggal</th>
+    <th>Keterangan</th>
+    <th colspan="3">Action</th>
+  </tr>
+<% i = 1 %>
+<% @outgoing_mails.each do |outgoing_mail| %>
+  <tr>
+    <td><%= i%></td>
+    <td><%= outgoing_mail.code %></td>
+    <td><%= outgoing_mail.from %></td>
+    <td><%= outgoing_mail.to %></td>
+    <td><%= outgoing_mail.concern %></td>
+    <td><%= outgoing_mail.date %></td>
+    <td><%= outgoing_mail.explanation %></td>
+    <td><%= link_to 'Show', outgoing_mail, :class => "show" %></td>
+    <td><%= link_to 'Edit', edit_outgoing_mail_path(outgoing_mail),:class => "edit", %></td>
+    <td><%= link_to 'Destroy', outgoing_mail, confirm: 'Are you sure?', method: :delete,:class => "delete", %></td>
+    <% i=i+1 %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Outgoing Mail', new_outgoing_mail_path,:class=>'button' %>

@@ -1,0 +1,32 @@
+<h3>Detail Surat Keluar</h3>
+<p id="notice"><%= notice %></p>
+<table  class="table_list" border="0" cellspacing="0">
+  <tr>
+		<td>Nomor Surat</td><td><%= @outgoing_mail.code %></td>
+  </tr>
+  <tr>
+		<td>Pengirim</td><td><%= @outgoing_mail.from %></td>
+  </tr>
+  <tr>
+	  <td>Tujuan</td><td><%= @outgoing_mail.to %></td>
+	</tr>
+	<tr>
+		<td>Perihal</td><td><%= @outgoing_mail.concern %></td>
+	</tr>
+	<tr>
+		<td>Tanggal</td><td><%= @outgoing_mail.date %></td>
+	</tr>
+	<tr>
+		<td>Keterangan</td><td><%= @outgoing_mail.explanation %></td>
+	</tr>
+	<tr>
+		<td>Attachment</td>
+		<td>
+			<% if @outgoing_mail.attachment? %>
+			<%= link_to @outgoing_mail.attachment_file_name, @outgoing_mail.attachment.url %>
+			<% end %>
+		</td>
+	</tr>
+
+</table>
+<p><%= link_to 'Edit', edit_outgoing_mail_path(@outgoing_mail),:class=>'button' %>  <%= link_to 'Back', outgoing_mails_path,:class=>'button' %></p>

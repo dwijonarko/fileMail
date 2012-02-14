@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  code: MyString
+  from: MyString
+  to: MyString
+  concern: MyString
+  disposition: MyString
+  date: 2012-02-14
+  explanation: MyText
+  attachment_file_name: MyString
+  attachment_content_type: MyString
+
+two:
+  code: MyString
+  from: MyString
+  to: MyString
+  concern: MyString
+  disposition: MyString
+  date: 2012-02-14
+  explanation: MyText
+  attachment_file_name: MyString
+  attachment_content_type: MyString

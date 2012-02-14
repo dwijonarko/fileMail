@@ -1,0 +1,51 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree .
+*/
+th{
+	background:#404040;
+	color:white;
+	padding: 10px 5px 10px 5px;
+}
+.table_list{
+	width:100%;
+}
+.table_list td {
+	font-weight: bold;
+	border-bottom:1px solid #cecece;
+	vertical-align: top;
+}
+tr.alt td{
+	background:#f1f1f1;
+}
+
+tr.over td{
+	background: #F5F2F2;
+}
+#incoming_mail_date,#outgoing_mail_date {
+    background-image: url("images/btn_calendar.gif");
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 25px;
+    width:280px;
+}
+.validation-error{
+  font-weight:bold;
+  background:#FAFAFA;
+  border:solid 2px #F5E0E1;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+
+  color:#3383BB;
+}
+.validation-error input{
+  background-color:#F5E0E1;
+  padding: 2px;
+  box-shadow: 0.2em 0.2em #CCC;
+  -moz-box-shadow: 0.2em 0.2em #CCC;
+  -webkit-box-shadow: 0.2em 0.2em #CCC;
+}

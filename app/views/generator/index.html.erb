@@ -1,0 +1,16 @@
+<h1>Generate Nomor Surat</h1>
+<%= form_for(@generator, :url =>{:action =>"generate"}) do |f| %>
+	<table>
+	<tr>
+		<td>Divisi</td>
+		<td><%= f.collection_select :division, Division.all, :code, :name, {:prompt=>"-Pilih dahulu-"}, {:class=>'select'} %></td>
+	</tr>
+	<tr>
+		<td>Kode Perihal</td>
+		<td><%= f.text_field :code,:class=>"input"%></td>
+	</tr>
+	<tr>
+		<td><%= f.submit %> </td><td><%= button_tag(value="Reset", :type => 'reset',:class=>"button") %></td>
+	</tr>
+	</table>
+<% end %>
