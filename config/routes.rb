@@ -1,9 +1,9 @@
 FileMail::Application.routes.draw do
-	match "generator/"=> "generator#index"
-  get "generator/index"
-  get "generator/generate"
+	get "generator"=> "generator#index"
+	get "generator/index"=> "generator#index"
 	post "generator/generate"=> 'generator#generate'
-  resources :divisions
+
+	resources :divisions
 
   resources :outgoing_mails
 

@@ -43,7 +43,7 @@ class DivisionsController < ApplicationController
     @division = Division.new(params[:division])
 
     respond_to do |format|
-      if @division.save
+      if @division.valid?
         format.html { redirect_to @division, notice: 'Division was successfully created.' }
         format.json { render json: @division, status: :created, location: @division }
       else

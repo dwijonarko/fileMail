@@ -19,8 +19,7 @@ $(document).ready(function(){
 
 	$( "#incoming_mail_date" ).datepicker({ dateFormat: 'yy-mm-dd' });
 	$( "#outgoing_mail_date" ).datepicker({ dateFormat: 'yy-mm-dd' });
-	$( "input:submit" ).button();
-	$( ".button" ).button();
+	$( "input:submit, .button" ).button();
 	$( ".show" ).button({
 		icons:{primary: "ui-icon-folder-open"},text: false
 	});
@@ -31,4 +30,5 @@ $(document).ready(function(){
 		icons:{primary: "ui-icon-closethick"},text: false
 	});
 
+	return false;
 });

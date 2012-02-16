@@ -7,17 +7,12 @@ class GeneratorController < ApplicationController
   end
 
   def generate
-		@generator = Generator.new(params[:generator])
+		@generator = Generator.new(params['form_data'])
 		if @generator.valid?
-			respond_to do |format|
-				@last_id = OutgoingMail.last
-				@number = Generator.submit(params[:generator][:code],params[:generator][:division],@last_id)
-				format.html
-			end
+				@number = Generator.submit(params['form_data']['code'],params['form_data']['division'])
+				render :text => @number.to_s
 		else
-			respond_to do |format|
-				format.html { render action: "index" }
-			end
+				render :text=> "Isi field terlebih dahulu"
 		end
   end
 

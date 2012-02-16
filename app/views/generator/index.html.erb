@@ -1,4 +1,5 @@
 <h1>Generate Nomor Surat</h1>
+<div id="content">
 <%= form_for(@generator, :url =>{:action =>"generate"}) do |f| %>
 	<table>
 	<tr>
@@ -7,10 +8,14 @@
 	</tr>
 	<tr>
 		<td>Kode Perihal</td>
-		<td><%= f.text_field :code,:class=>"input"%></td>
+		<td><%= f.text_field :code ,:class=>"input"%></td>
 	</tr>
-	<tr>
-		<td><%= f.submit %> </td><td><%= button_tag(value="Reset", :type => 'reset',:class=>"button") %></td>
-	</tr>
+<!--	<tr>
+		<td><%= f.submit nil, :id => "btn_submit" %> </td><td><%= button_tag(value="Reset", :type => 'reset',:class=>"button") %></td>
+	</tr>-->
 	</table>
 <% end %>
+<div id="result">
+<%= @number%>
+</div>
+</div>
