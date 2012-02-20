@@ -1,0 +1,5 @@
+<h1>Welcome <%= session[:user_name]%></h1>
+It's <%= Time.now %><br>
+Anda memiliki <%= @total_incoming_mails %> surat masuk dan <%= @total_outgoing_mails%> surat keluar
+
+<%= button_to 'Logout', logout_path, :method => :delete %>

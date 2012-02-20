@@ -1,14 +1,18 @@
 FileMail::Application.routes.draw do
-  resources :users
+  get "admin"=> 'admin#index'
+	controller :sessions do
+		get 'login'=> :new
+		post 'login'=>:create
+		delete 'logout'=>:destroy
+	end
 
+  resources :users
 	get "generator"=> "generator#index"
 	get "generator/index"=> "generator#index"
 	post "generator/generate"=> 'generator#generate'
 
 	resources :divisions
-
   resources :outgoing_mails
-
   resources :incoming_mails
 
   # The priority is based upon order of creation:
@@ -60,7 +64,7 @@ FileMail::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+   root :to => 'sessions#new'
 
   # See how all your routes lay out with "rake routes"
 
