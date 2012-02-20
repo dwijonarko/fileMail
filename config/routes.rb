@@ -1,4 +1,6 @@
 FileMail::Application.routes.draw do
+  resources :users
+
 	get "generator"=> "generator#index"
 	get "generator/index"=> "generator#index"
 	post "generator/generate"=> 'generator#generate'
