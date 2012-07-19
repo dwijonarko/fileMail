@@ -48,9 +48,7 @@ tr {
 
 label {
   font-family: Arial, Verdana;
-  text-shadow: 2px 2px 2px #ccc;
-  display: block;
-  float: left;
+  text-shadow: 2px 2px 2px #ccc; 
   font-weight: bold;
   margin-right: 10px;
   text-align: right;
@@ -63,7 +61,7 @@ label {
   font-size: 15px;
   padding: 5px;
   border: 1px solid #b9bdc1;
-	background: #E0DFDE;
+  background: #E0DFDE;
   width: 300px; }
 
 .select {

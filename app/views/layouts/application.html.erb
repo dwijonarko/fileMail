@@ -2,13 +2,12 @@
 <html>
 <head>
   <title>FileMail</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag  "css/reset","css/style","css/invalid" %>
+  <!--[if lte IE 7]>
+			<%= stylesheet_link_tag  "css/ie" %>
+	<![endif]-->
+  <%= javascript_include_tag "application", %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
 <%= yield %>
-
-</body>
 </html>

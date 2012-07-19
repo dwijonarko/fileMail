@@ -1,26 +1,45 @@
-<div class="session_form">
-  <% if flash[:alert] %>
-    <p id="notice"><%= flash[:alert] %></p>
-  <% end %>
 
-  <%= form_tag do %>
-    <fieldset>
-      <legend>Please Log In</legend>
-<table>
-<tr>
-	<td><label for="name">Name:</label></td>
-	<td><%= text_field_tag :name, params[:name] %></td>
-</tr>
-<tr>
-	<td><label for="password">Password:</label></td>
-	<td><%= password_field_tag :password, params[:password] %></td>
-</tr>
-<tr>
-	<td><%= submit_tag "Login" %></td>
-	<td></td>
-</tr>
-</table>
-
-    </fieldset>
-  <% end %>
-</div>
+<body id="login">
+		<div id="login-wrapper" class="png_bg">
+			<div id="login-top">
+			
+				<h1>Simpla Admin</h1>
+				<!-- Logo (221px width) -->
+				<%= image_tag("logo.png") %>
+			</div> <!-- End #logn-top -->
+			
+			<div id="login-content">
+				
+				<%= form_tag do %>
+					<% if flash[:alert] %>
+					<div class="notification error png_bg">
+						<div>
+							    <p id="notice" class="login_notice "><%= flash[:alert] %></p>
+						</div>
+					</div>
+					<% end %>
+					
+					<p>
+						<label for="name">Username:</label>
+						<%= text_field_tag :name, params[:name] , :class => 'text-input' %>
+					</p>
+					<div class="clear"></div>
+					<p>
+						<label for="password">Password:</label>
+						<%= password_field_tag :password, params[:password], :class => 'text-input' %>
+					</p>
+					<div class="clear"></div>
+					<p id="remember-password">
+						<input type="checkbox" />Remember me
+					</p>
+					<div class="clear"></div>
+					<p>
+						<%= submit_tag "LOGIN", :class => 'button' %>
+					</p>
+					
+				<% end %>
+			</div> <!-- End #login-content -->
+			
+		</div> <!-- End #login-wrapper -->
+		
+  </body>
