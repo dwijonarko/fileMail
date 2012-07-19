@@ -7,28 +7,3 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-$(document).ready(function(){
-	$(".table_list tr:even").addClass("alt");
-
-	$(".table_list tr").mouseover(function(){
-		$(this).addClass("over");
-	});
-	$(".table_list tr").mouseout(function(){
-		$(this).removeClass("over");
-	});
-
-	$( "#incoming_mail_date" ).datepicker({ dateFormat: 'yy-mm-dd' });
-	$( "#outgoing_mail_date" ).datepicker({ dateFormat: 'yy-mm-dd' });
-	$( "input:submit, .button" ).button();
-	$( ".show" ).button({
-		icons:{primary: "ui-icon-folder-open"},text: false
-	});
-	$( ".edit" ).button({
-		icons:{primary: "ui-icon-comment"},text: false
-	});
-	$( ".delete" ).button({
-		icons:{primary: "ui-icon-closethick"},text: false
-	});
-
-	return false;
-});

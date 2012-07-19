@@ -2,31 +2,31 @@
 <div class="field">
 <table>
 	<tr>
-		<td>Nomor Surat</td><td><%= f.text_field :code, :class => "input" %></td>
+		<td>Nomor Surat</td><td><%= f.text_field :code, :class => "text-input small-input" %></td>
 	</tr>
 	<tr>
-		<td>Dari</td><td><%= f.text_field :from , :class => "input" %></td>
+		<td>Dari</td><td><%= f.text_field :from , :class => "text-input small-input" %></td>
 	</tr>
 	<tr>
-		<td>Untuk</td><td><%= f.text_field :to , :class => "input"%></td>
+		<td>Untuk</td><td><%= f.text_field :to , :class => "text-input small-input"%></td>
 	</tr>
 	<tr>
-		<td>Perihal</td><td><%= f.text_field :concern , :class => "input"%></td>
+		<td>Perihal</td><td><%= f.text_field :concern , :class => "text-input small-input"%></td>
 	</tr>
 	<tr>
-		<td>Disposisi</td><td><%= f.text_field :disposition , :class => "input"%></td>
+		<td>Disposisi</td><td><%= f.text_field :disposition , :class => "text-input small-input"%></td>
 	</tr>
 	<tr>
-		<td>Tanggal</td><td><%= f.text_field :date , :class => "input" %></td>
+		<td>Tanggal</td><td><%= f.text_field :date , :class => "text-input small-input" %></td>
 	</tr>
 	<tr>
-		<td>Keterangan</td><td><%= f.text_area :explanation, :cols=>35, :rows=>6 , :class => "input"%></td>
+		<td>Keterangan</td><td><%= f.text_area :explanation, :cols=>35, :rows=>6 , :class => "wysiwyg", :style=>"width: 653px;"%></td>
 	</tr>
 	<tr>
 		<td>File</td><td><%= f.file_field :attachment %></td>
 	</tr>
 	<tr>
-		<td><%= f.submit %> </td><td><%= link_to 'Back', incoming_mails_path,:class=>'button' %></td>
+		<td></td><td><%= f.submit "Save"  , :class => 'button'%>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Back', incoming_mails_path,:class=>'button' %></td>
 	</tr>
 </table>
 </div>
