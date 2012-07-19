@@ -1,0 +1,34 @@
+<table class="table_list" border="0" cellspacing="0">
+	<thead>
+	  <tr>
+	    <th >Nomor</th>
+	    <th>Nomor Surat</th>
+	    <th>Pengirim</th>
+	    <th>Tujuan</th>
+	    <th>Perihal</th>
+	    <th>Disposisi</th>
+	    <th>Tanggal</th>
+	    <th>Keterangan</th>
+	    <th colspan="3">Action</th>
+	  </tr>
+</thead>						
+<tbody>
+<% i = 1 %>
+<% @incoming_mails.each do |incoming_mail| %>
+ <tr>
+    <td><%= i%></td>
+    <td><%= incoming_mail.code %></td>
+    <td><%= incoming_mail.from %></td>
+    <td><%= incoming_mail.to %></td>
+    <td><%= incoming_mail.concern %></td>
+    <td><%= incoming_mail.disposition %></td>
+    <td><%= incoming_mail.date %></td>
+    <td><%= incoming_mail.explanation %></td>
+    <td><%= link_to 'Show', incoming_mail, :class => "show" %></td>
+    <td><%= link_to 'Edit', edit_incoming_mail_path(incoming_mail),:class => "edit", %></td>
+    <td><%= link_to 'Destroy', incoming_mail, confirm: 'Are you sure?', method: :delete,:class => "delete", %></td>
+    <% i=i+1 %>
+  </tr>
+<% end %>
+</tbody>
+</table>

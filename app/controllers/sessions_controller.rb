@@ -1,7 +1,8 @@
 class SessionsController < ApplicationController
 	skip_before_filter :authorize
-
+  
   def new
+  	render :action => 'new', :layout => 'login'
   end
 
   def create
@@ -15,8 +16,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-		session[:user_id]=nil
-		redirect_to login_url, :alert=>"Successfully logout"
+		reset_session
+		redirect_to login_url, :notice=>"Successfully logout!"
+
   end
 
 end

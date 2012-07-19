@@ -1,5 +1,22 @@
-<h1>Welcome <%= session[:user_name]%></h1>
-It's <%= Time.now %><br>
-Anda memiliki <%= @total_incoming_mails %> surat masuk dan <%= @total_outgoing_mails%> surat keluar
 
-<%= button_to 'Logout', logout_path, :method => :delete %>
+
+				<%= render('shortcut')%>
+			<div class="content-box"><!-- Start Content Box -->
+				<div class="content-box-header">
+					<ul class="content-box-tabs">
+						<li><a href="#incomingMails" class="default-tab">5 Last Incoming Mails</a></li> 
+						<li><a href="#outgoingMails">5 Last Outgoing Mails</a></li>
+					</ul>
+					<h3>Content</h3>
+					<div class="clear"></div></div> <!-- End .content-box-header -->	
+					
+					<div class="content-box-content">
+						<div id="incomingMails" class="tab-content default-tab">
+							<%= render 'table_incoming' %>
+						</div>
+						<div id="outgoingMails" class="tab-content">
+							<%= render 'table_outgoing' %>
+						</div>		
+					</div>			
+				</div>
+			</div>

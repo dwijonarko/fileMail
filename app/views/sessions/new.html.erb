@@ -17,8 +17,14 @@
 							    <p id="notice" class="login_notice "><%= flash[:alert] %></p>
 						</div>
 					</div>
-					<% end %>
-					
+					<% elsif flash[:notice]%>
+					<div class="notification success png_bg">
+						<div>
+							    <p id="notice" class="login_notice "><%= flash[:notice] %></p>
+						</div>
+					</div>
+
+					<% end %>					
 					<p>
 						<label for="name">Username:</label>
 						<%= text_field_tag :name, params[:name] , :class => 'text-input' %>

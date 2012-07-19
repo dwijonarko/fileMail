@@ -2,12 +2,61 @@
 <html>
 <head>
   <title>FileMail</title>
-  <%= stylesheet_link_tag  "css/reset","css/style","css/invalid" %>
+  <%= stylesheet_link_tag  "css/reset","css/style","css/invalid	" %>
   <!--[if lte IE 7]>
 			<%= stylesheet_link_tag  "css/ie" %>
 	<![endif]-->
   <%= javascript_include_tag "application", %>
   <%= csrf_meta_tags %>
 </head>
-<%= yield %>
+<body>
+		<div id="body-wrapper"> <!-- Wrapper for the radial gradient background -->
+		
+		<div id="sidebar"><div id="sidebar-wrapper"> <!-- Sidebar with logo and menu -->
+			<div id="sidebar-title">			<!-- Logo (221px wide) -->
+			<a href="#"><%= image_tag("logo.png") %></a></div>
+
+		  
+			<!-- Sidebar Profile links -->
+			<div id="profile-links">
+				Hello, <a href="#" title="Edit your profile"><%= session[:user_name]%></a>, you have <%= @total_incoming_mails %> incoming mails and <%= @total_outgoing_mails%> outgoing mails<br />
+				<br />
+				<a href="#" title="View the Site">View the Site</a> | <%= link_to 'Logout', logout_path, :method => :delete %>
+			</div>
+			<ul id="main-nav">  <!-- Accordion Menu -->
+				<li>
+					<%= link_to "Generate Number",{:controller=>"generator"}, :class => "nav-top-item no-submenu current" %>
+				</li>
+
+				<li>
+					<%= link_to "Incoming Mails", incoming_mails_path, :class => "nav-top-item" %>
+					<ul>
+						<li><%= link_to "Manage Incoming Mails", incoming_mails_path %></li>
+						<li><%= link_to "New Incoming Mails", {:controller=>"incoming_mails", :action=>"new"} %></li>
+					</ul>
+				</li>
+				<li>
+					<%= link_to "Outgoing Mails", outgoing_mails_path, :class => "nav-top-item" %>
+					<ul>
+						<li><%= link_to "Manage Outgoing Mails", outgoing_mails_path %></li>
+						<li><%= link_to "New Outgoing Mails", {:controller=>"outgoing_mails", :action=>"new"} %></li>
+					</ul>
+				</li>
+				<li>
+					<%= link_to "User", users_path, :class => "nav-top-item" %>
+					<ul>
+						<li><%= link_to "Manage Users", users_path %></li>
+						<li><%= link_to "New Users ", {:controller=>"users", :action=>"new"} %></li>
+					</ul>
+				</li>
+			</ul> <!-- End #main-nav -->
+		</div></div>
+		<div id="main-content">
+			<div class="clear"></div> <!-- End .clear -->
+	<%= yield %>
+			</div>
+	</div>
+
+</body>
+
 </html>
